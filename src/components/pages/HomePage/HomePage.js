@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import logo from '../../../images/logo.svg';
 import './HomePage.scss';
+import { connect } from 'react-redux';
+// Action
+import { simpleAction } from '../../../actions/simpleAction';
+
+
+const Button = (props) => (
+  <button onClick={() => props.simpleAction()}>Test redux action</button>
+)
+
 
 class HomePage extends Component {
   render() {
@@ -19,10 +28,23 @@ class HomePage extends Component {
           >
             Learn React
           </a>
+          {/* <button onClick={() => this.props.simpleAction()}>Test redux action</button> */}
+          <Button simpleAction={this.props.simpleAction}/>
         </header>
       </div>
     );
   }
 }
 
-export default HomePage;
+// allows the React component to subscribe to redux state updates.
+const mapStateToProps = (state) => ({
+  ...state
+})
+
+// Map Dispatch Function to Component Props 
+const mapDispatchToProps = (dispatch) => ({
+  simpleAction: () => dispatch(simpleAction())
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

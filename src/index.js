@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // Redux
 import { Provider } from 'react-redux';
-import configureStore from './store/config';
+import configStore from './store/config';
 // Style
 import './index.scss';
 // Service Workers
@@ -11,8 +11,20 @@ import * as serviceWorker from './serviceWorker';
 import HomePage from './components/pages/HomePage';
 
 
+// create redux store
+const store = configStore();
+console.log(222,store.getState());
+
+// Subscribe
+const unsubscribe = store.subscribe(() => {
+    const state = store.getState();
+    // const visibleExpenses = getVisibleExpenses(state.expenses, state.filter);
+    // console.log(444,visibleExpenses);   
+})
+
+
 const jsx = (
-    <Provider store={configureStore()}>
+    <Provider store={store}>
         <HomePage />
     </Provider>
 );
