@@ -8,7 +8,7 @@ import './index.scss';
 // Service Workers
 import * as serviceWorker from './serviceWorker';
 // Pages
-import HomePage from './components/pages/HomePage';
+import FullPage from './components/pages/FullPage';
 
 
 // create redux store
@@ -25,7 +25,7 @@ const unsubscribe = store.subscribe(() => {
 
 const jsx = (
     <Provider store={store}>
-        <HomePage />
+        <FullPage />
     </Provider>
 );
 

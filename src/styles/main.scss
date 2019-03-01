@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-teaser {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-white {
+  color:white;
+}
+
+.font-m {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.font-xl {
+  font-size: 55px;
+}
+
+.box {
+  width: 600px;
+}
+
+.container {
+  margin: 60px;
+}
